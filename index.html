@@ -79,10 +79,9 @@
 
       var link = document.createElement("link");
       link.rel = "preload";
-      link.as = "image";
-      link.href = "/assets/hero/hero-1024.jpg";
-      link.setAttribute("imagesrcset", "/assets/hero/hero-480.jpg 480w, /assets/hero/hero-768.jpg 768w, /assets/hero/hero-1024.jpg 1024w, /assets/hero/hero-1440.jpg 1440w");
-      link.setAttribute("imagesizes", "(max-width: 480px) 100vw, (max-width: 768px) 100vw, (max-width: 1024px) 100vw, 1440px");
+      link.as = "video";
+      link.href = "/assets/video/hero.mp4";
+      link.setAttribute("type", "video/mp4");
       link.fetchPriority = "high";
       document.head.appendChild(link);
     })();
@@ -187,23 +186,12 @@
         <div id="app" class="stage__content"><section class="home-stack">
   <section class="home-hero-media">
     <div class="home-hero-media__media">
-      <img
-        src="/assets/hero/hero-1024.jpg"
-        srcset="/assets/hero/hero-480.jpg 480w,
-          /assets/hero/hero-768.jpg 768w,
-          /assets/hero/hero-1024.jpg 1024w,
-          /assets/hero/hero-1440.jpg 1440w"
-        sizes="(max-width: 480px) 100vw,
-          (max-width: 768px) 100vw,
-          (max-width: 1024px) 100vw,
-          1440px"
-        width="1440"
-        height="900"
-        alt=""
-        loading="lazy"
-        fetchpriority="auto"
-        decoding="async"
-      />
+      <video class="home-hero-media__video" autoplay muted loop playsinline preload="metadata" poster="/assets/gallery/optimized/Pool34-1440.jpg" width="1440" height="900">
+        <source src="/assets/video/hero.webm" type="video/webm">
+        <source src="/assets/video/hero.mp4" type="video/mp4">
+        <!-- Fallback image for very old browsers -->
+        <img src="/assets/gallery/optimized/Pool34-1440.jpg" alt="" />
+      </video>
       <div class="home-hero-media__overlay"></div>
       <div class="home-hero-media__content">
         <div class="home-hero-media__eyebrow">Our Passion:</div>
