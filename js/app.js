@@ -17,6 +17,7 @@ const ROUTE_ORDER = ["home", "process", "gallery", "about", "financing", "career
 
 let cleanupHomeTestimonialsMobileRotator = null;
 let galleryLightboxModulePromise = null;
+let galleryProjectCardModulePromise = null;
 let hearthLoaderModulePromise = null;
 // let designToolModulePromise = null;
 let hasStartedBackgroundVideo = false;
@@ -286,12 +287,31 @@ function syncHomeHeroPriority(route) {
   }
 }
 
+async function initializeGalleryProjectCards(root = app || document) {
+  if (!root) return;
+
+  const cards = Array.from(root.querySelectorAll(".gallery-project-card"));
+  if (!cards.length) return;
+
+  if (!galleryProjectCardModulePromise) {
+    galleryProjectCardModulePromise = import("./gallery-project-card.js");
+  }
+
+  await galleryProjectCardModulePromise;
+  cards.forEach((card) => {
+    window.HoganPoolsGalleryProjectCard?.init?.(card);
+  });
+}
+
 async function ensureRouteAssets(route) {
   if (route === "gallery") {
     if (!galleryLightboxModulePromise) {
       galleryLightboxModulePromise = import("./gallery-lightbox.js");
     }
-    await galleryLightboxModulePromise;
+    if (!galleryProjectCardModulePromise) {
+      galleryProjectCardModulePromise = import("./gallery-project-card.js");
+    }
+    await Promise.all([galleryLightboxModulePromise, galleryProjectCardModulePromise]);
   }
 
   if (route === "financing") {
@@ -909,6 +929,9 @@ async function renderRouteIntoCurrent(route) {
   syncHeaderNavState(route);
   updateSeoForRoute(payload?.seo, route);
   initObfuscatedPhoneLinks(app || document);
+  if (route === "gallery") {
+    await initializeGalleryProjectCards(app || document);
+  }
   syncHomeHeroPriority(route);
   if (route === "financing") {
     window.initHearthCalculator?.();
@@ -1001,6 +1024,9 @@ async function slideCardNavigate(route, dir) {
     syncHeaderNavState(route);
     updateSeoForRoute(payload?.seo, route);
     initObfuscatedPhoneLinks(app || document);
+    if (route === "gallery") {
+      await initializeGalleryProjectCards(app || document);
+    }
     if (route === "financing") {
       window.initHearthCalculator?.();
     }
