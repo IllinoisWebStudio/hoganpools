@@ -2125,10 +2125,29 @@ body.is-gunite .stage__content{
   text-align:center;
 }
 .cta{
-  display:flex;
-  flex-wrap:wrap;
-  gap:24px;
-  justify-content:center;
+  padding: 3rem 0;
+  text-align: center;
+}
+.cta--hero-style {
+  padding: 2.5rem 0 2rem;
+}
+.cta--hero-style .container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+.cta--hero-style h2,
+.cta--hero-style p {
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+.cta--hero-style p {
+  max-width: 760px;
+}
+.cta--hero-style .page-hero__divider {
+  width: 100%;
+  max-width: 480px;
+  margin: 1.25rem auto;
 }
 .btn{
   display:inline-block;
@@ -2140,7 +2159,7 @@ body.is-gunite .stage__content{
   font-weight: 500;
   font-size: 13px;
   cursor:pointer;
-  text-decoration:underline;
+  text-decoration:none;
   transition:color .2s ease;
 }
 .btn:hover{
@@ -2170,8 +2189,26 @@ body.is-gunite .stage__content{
   height: 18px;
 }
 
+.about-card__text {
+    max-width: 850px;
+    margin: 0 auto;
+}
+
+.about-card__text p {
+    line-height: 1.7;
+    margin-bottom: 1.5rem;
+}
+
+.about-card__text h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: clamp(2rem, 3vw, 2.6rem);
+}
+
+
 .about-emblems{
-  padding: 22px 0 34px;
+  padding: 18px 0 34px;
+  margin-top: 1.5rem;
 }
 
 .about-emblems__links{
@@ -2198,6 +2235,7 @@ body.is-gunite .stage__content{
   width: 56px;
   height: 56px;
   object-fit: contain;
+  
 }
 
 .about-emblems__img--fb{
@@ -2236,8 +2274,13 @@ body.is-gunite .stage__content{
   justify-content: center;
   gap: 12px;
   text-align: center;
+  max-width: 700px;
+  margin: 2rem auto 1.5rem;
 }
-
+.about-card__cta p {
+    margin: 0.75rem auto 1.5rem;
+    line-height: 1.6;
+}
 .about-card__cta h2{
   margin: 0;
 }
@@ -2245,6 +2288,19 @@ body.is-gunite .stage__content{
 .about-card__cta .btn{
   margin: 0;
 }
+
+.section-divider {
+    width: 180px;
+    height: 1px;
+    margin: 0 auto 1rem;
+    background: #08698a;
+    border-radius: 999px;
+}
+
+.page-hero {
+    margin-bottom: 3rem;
+}
+
 
 .cta-link-match{
   font-size: 19px;
@@ -2690,6 +2746,25 @@ html{
   gap: 16px;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   align-items: stretch;
+}
+
+.page-hero h1,
+.page-hero__divider,
+.page-hero p {
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+.page-hero__divider {
+  width: 100%;
+  max-width: 480px;
+  margin: 1.25rem auto;
+  border-top: 2px solid currentColor; /* or #ccc */
+}
+.page-hero p {
+  max-width: 900px;
+  margin: 0 auto;
+  line-height: 1.6;
 }
 
 .gallery-full .gallery-item{

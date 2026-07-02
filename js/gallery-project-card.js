@@ -1,5 +1,5 @@
 (() => {
-  const AUTO_ADVANCE_MS = 6200;
+  const AUTO_ADVANCE_MS = 4600;
   const FADE_MS = 900;
 
   const initGalleryProjectCard = (root) => {
