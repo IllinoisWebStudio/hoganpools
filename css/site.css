@@ -2188,7 +2188,12 @@ body.is-gunite .stage__content{
   width: auto;
   height: 18px;
 }
-
+.about-highlight {
+    max-width: 850px;
+    margin: 2rem auto;
+    padding: 1.5rem;
+    background: rgba(0, 0, 0, 0.12);
+}
 .about-card__text {
     max-width: 850px;
     margin: 0 auto;
