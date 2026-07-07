@@ -2192,8 +2192,12 @@ body.is-gunite .stage__content{
 .about-card__text {
     max-width: 850px;
     margin: 0 auto;
+    
 }
-
+.about-card__text h1,
+.about-card__text h2 {
+    text-align: center;
+}
 .about-card__text p {
     line-height: 1.7;
     margin-bottom: 1.5rem;

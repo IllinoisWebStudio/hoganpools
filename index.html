@@ -29,96 +29,90 @@
   <link rel="icon" type="image/x-icon" href="/favicon.ico" />
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
-  <script type="application/ld+json">
+ <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
     {
-      "@context": "https://schema.org",
-      "@graph": [
+      "@type": [
+        "Organization",
+        "PoolContractor"
+      ],
+      "@id": "https://www.hoganpools.com/#organization",
+      "name": "Hogan Pools",
+      "url": "https://www.hoganpools.com/",
+      "logo": "https://www.hoganpools.com/assets/img-webp/logo.webp",
+      "image": "https://www.hoganpools.com/assets/hero/hero-1440.jpg",
+      "telephone": "+1-636-744-3242",
+      "email": "anthony@hoganpools.com",
+      "description": "Hogan Pools designs and builds custom gunite pools for homeowners throughout Ballwin, St. Louis, and surrounding Missouri communities.",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "325 Brightfield Drive",
+        "addressLocality": "Ballwin",
+        "addressRegion": "MO",
+        "postalCode": "63021",
+        "addressCountry": "US"
+      },
+      "areaServed": [
+        "Ballwin, MO",
+        "Chesterfield, MO",
+        "Wildwood, MO",
+        "St. Louis, MO"
+      ],
+      "openingHoursSpecification": [
         {
-          "@type": "Organization",
-          "@id": "https://www.hoganpools.com/#organization",
-          "name": "Hogan Pools",
-          "url": "https://www.hoganpools.com/",
-          "logo": "https://www.hoganpools.com/assets/img-webp/logo.webp",
-          "telephone": "+1-636-744-3242",
-          "email": "anthony@hoganpools.com",
-          "address": {
-            "@type": "PostalAddress",
-            "streetAddress": "325 Brightfield Drive",
-            "addressLocality": "Ballwin",
-            "addressRegion": "MO",
-            "postalCode": "63021",
-            "addressCountry": "US"
-          },
-            "sameAs": [
-            "https://www.facebook.com/HoganPools",
-            "https://www.instagram.com/hoganpools/",
-            "https://www.linkedin.com/company/hogan-pools/",
-            "https://github.com/IllinoisWebStudio/hoganpools"
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": [
+            "Monday",
+            "Tuesday",
+            "Wednesday",
+            "Thursday",
+            "Friday"
           ],
-          "founder": {
-            "@id": "https://www.hoganpools.com/#anthony-george"
-          }
-        },
-        {
-          "@type": "Person",
-          "@id": "https://www.hoganpools.com/#anthony-george",
-          "name": "Anthony George",
-          "jobTitle": "Founder and Owner",
-          "description": "Owner of Hogan Pools and the lead of the company’s operations and client experience.",
-          "worksFor": {
-            "@id": "https://www.hoganpools.com/#organization"
-          }
-        },
-        {
-          "@type": "WebSite",
-          "name": "Hogan Pools",
-          "url": "https://www.hoganpools.com/"
-        },
-        {
-          "@type": "PoolContractor",
-          "@id": "https://www.hoganpools.com/#organization"
-          "name": "Hogan Pools",
-          "url": "https://www.hoganpools.com/",
-          "description": "Hogan Pools designs and builds custom gunite pools for homeowners in St. Louis, Ballwin, and nearby Missouri communities.",
-          "image": "https://www.hoganpools.com/assets/hero/hero-1440.jpg",
-          "telephone": "+1-636-744-3242",
-          "email": "anthony@hoganpools.com",
-          "address": {
-            "@type": "PostalAddress",
-            "addressLocality": "Ballwin",
-            "addressRegion": "MO",
-            "addressCountry": "US"
-          },
-          "areaServed": [
-            "Ballwin, MO",
-            "Chesterfield, MO",
-            "Wildwood, MO",
-            "St. Louis, MO"
-          ],
-          "openingHoursSpecification": [
-            {
-              "@type": "OpeningHoursSpecification",
-              "dayOfWeek": [
-                "Monday",
-                "Tuesday",
-                "Wednesday",
-                "Thursday",
-                "Friday"
-              ],
-              "opens": "07:00",
-              "closes": "16:00"
-            }
-          ],
-          "sameAs": [
-            "https://www.facebook.com/HoganPools",
-            "https://www.instagram.com/hoganpools/",
-            "https://www.linkedin.com/company/hogan-pools/",
-            "https://github.com/IllinoisWebStudio/hoganpools"
-          ]
+          "opens": "07:00",
+          "closes": "16:00"
         }
+      ],
+      "sameAs": [
+        "https://www.facebook.com/HoganPools",
+        "https://www.instagram.com/hoganpools/",
+        "https://www.linkedin.com/company/hogan-pools/",
+        "https://github.com/IllinoisWebStudio/hoganpools"
+      ],
+      "founder": {
+        "@id": "https://www.hoganpools.com/#anthony-george"
+      }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://www.hoganpools.com/#anthony-george",
+      "name": "Anthony George",
+      "jobTitle": "Founder and Owner",
+      "description": "Founder and owner of Hogan Pools with more than 20 years of pool construction experience.",
+      "worksFor": {
+        "@id": "https://www.hoganpools.com/#organization"
+      },
+      "knowsAbout": [
+        "Custom gunite pool construction",
+        "Pool design",
+        "Pool replastering",
+        "Residential pool construction",
+        "Pool startup procedures"
       ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://www.hoganpools.com/#website",
+      "name": "Hogan Pools",
+      "url": "https://www.hoganpools.com/",
+      "publisher": {
+        "@id": "https://www.hoganpools.com/#organization"
+      }
     }
-  </script>
+  ]
+}
+</script>
   <script>
     (function () {
       var h = window.location.hash;
