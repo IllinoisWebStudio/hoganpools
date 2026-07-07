@@ -311,22 +311,51 @@
         </div>
         
       </div>
-        <footer class="site-footer">
-    <div class="footer__grid">
-      <div class="footer__tagline">Your ideas. Our expertise. A pool built to last.</div>
-      <div class="footer__contact">
-                  <p>Questions?  Call or email us: </p>
-        <a href="#" data-obf-tel="dGVsOisxNjM2NzQ0MzI0Mg==" class="obf-phone-link" aria-label="Call Hogan Pools">
-          <span class="obf-phone-icon" aria-hidden="true">636-744-3242</span>
-        </a>
-        <a href="mailto:anthony@hoganpools.com">anthony@hoganpools.com</a>
+
+<footer class="site-footer">
+  <div class="footer__grid">
+
+    <div class="footer__left">
+      <div class="footer__tagline">
+        Your ideas. Our expertise. A pool built to last.
+      </div>
+
+      <div class="footer__copyright">
+        © 2026 Hogan Pools
       </div>
     </div>
-    <div class="footer__copyright">© 2026 by Hogan Pools</div>
 
-    <!-- Show the page's real published or updated date, machine-readable: -->
-<time class="time" datetime="2026-07-07">Last updated July 7, 2026</time>
-  </footer>
+    <div class="footer__contact">
+      <span class="footer__label">Questions? Call or email us:</span>
+
+<a href="javascript:void(0)"
+   data-obf-tel="dGVsOisxNjM2NzQ0MzI0Mg=="
+   class="obf-phone-link"
+   aria-label="Call Hogan Pools">
+  <span class="obf-phone-icon" aria-hidden="true">📞 </span>
+
+</a>
+
+<script>
+document.querySelectorAll(".obf-phone-link").forEach(link => {
+  link.addEventListener("click", event => {
+    event.preventDefault();
+
+    const tel = atob(link.dataset.obfTel); // "tel:+16367443242"
+
+    // Opens the phone app on supported devices
+    window.location.href = tel;
+  });
+});
+</script>
+      <a href="mailto:anthony@hoganpools.com">
+        anthony@hoganpools.com
+      </a>
+    </div>
+
+  </div>
+</footer>
+
     </div>
   </section>
 </section>

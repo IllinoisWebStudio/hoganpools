@@ -2181,6 +2181,7 @@ body.is-gunite .stage__content{
 
 .obf-phone-icon{
   line-height: 1;
+  
 }
 
 .obf-phone-image{
@@ -2332,40 +2333,84 @@ body.is-gunite .stage__content{
 
 /* Footer (rendered via /partials/footer.html) */
 .site-footer{
-  color: var(--on-dark);
-  padding: 26px 0;
+    margin-top:48px;
+    padding:34px var(--pad);
+    border-top:1px solid rgba(255,255,255,.08);
 }
+
 .footer__grid{
-  display:flex;
-  gap:28px;
-  justify-content:space-between;
-  flex-wrap:wrap;
-  padding: 0 var(--pad);
-  align-items:center;
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-end;
+    gap:40px;
+    flex-wrap:wrap;
 }
+
+.footer__left{
+    display:flex;
+    flex-direction:column;
+    gap:14px;
+}
+
 .footer__tagline{
-  flex: 1;
-  min-width:200px;
+    font-size:1.55rem;
+    font-weight:300;
+    letter-spacing:.01em;
+    color:rgba(255,255,255,.97);
+    line-height:1.35;
+    max-width:34rem;
 }
-.footer__contact{
-  display:flex;
-  gap:20px;
-  align-items:center;
-  flex-wrap:wrap;
-}
-.footer__contact a{
-  color: rgba(255,255,255,.9);
-  font-size: 13px;
-  white-space:nowrap;
-}
-.footer__contact a:hover{
-  text-decoration:underline;
-}
+
 .footer__copyright{
-  color: rgba(255,255,255,.75);
-  font-size: 13px;
-  padding: 14px var(--pad) 0;
-  margin-left: 82px;
+    font-size:.82rem;
+    color:rgba(255,255,255,.55);
+}
+
+.footer__contact{
+    display:flex;
+    align-items:center;
+    gap:18px;
+    flex-wrap:wrap;
+    justify-content:flex-end;
+}
+
+.footer__label{
+    color:rgba(255,255,255,.9);
+    font-size:1rem;
+}
+
+.footer__contact a{
+    color:rgba(255,255,255,.82);
+    font-size:.92rem;
+    text-decoration:none;
+    transition:opacity .2s ease;
+}
+
+.footer__contact a:hover{
+    opacity:1;
+    text-decoration:underline;
+}
+
+.footer__contact a:not(:hover){
+    opacity:.82;
+}
+
+@media (max-width:760px){
+
+    .footer__grid{
+        flex-direction:column;
+        align-items:flex-start;
+        gap:26px;
+    }
+
+    .footer__contact{
+        justify-content:flex-start;
+    }
+
+    .footer__tagline{
+        font-size:1.3rem;
+    }
+
 }
 .time {
   margin-left:82px;
