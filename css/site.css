@@ -2234,7 +2234,11 @@ body.is-gunite .stage__content{
   justify-content: center;
   transition: transform .2s ease;
 }
-
+.page-updated {
+    font-size: 0.85rem;
+    opacity: 0.7;
+    margin-top: 1.5rem;
+}
 .about-emblems__link:hover{
   transform: translateY(-2px);
 }
