@@ -3,27 +3,22 @@ Allow: /
 
 Sitemap: https://www.hoganpools.com/sitemap.xml
 
-
 User-agent: GPTBot
-Disallow:
 Allow: /
 
 User-agent: ChatGPT-User
-Disallow:
 Allow: /
 
 User-agent: ClaudeBot
-Disallow:
 Allow: /
 
 User-agent: anthropic-ai
-Disallow:
 Allow: /
 
 User-agent: PerplexityBot
-Disallow:
 Allow: /
 
 User-agent: Google-Extended
-Disallow:
 Allow: /
+
+Content-Signal: ai-train=yes, search=yes, ai-input=yes
