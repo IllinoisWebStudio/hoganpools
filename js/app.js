@@ -1,4 +1,5 @@
 // /js/app.js
+import { initObfuscatedPhoneLinks } from "./obfuscated-phone-links.js";
 import { getRouteFromHref, getRouteFromLocation, loadRoute, routeToPath } from "./router.js";
 
 const app = document.getElementById("app");
@@ -251,27 +252,6 @@ function updateSeoForRoute(seo, route) {
   ensureMetaByProperty("og:image").setAttribute("content", ogImage);
   ensureCanonicalLink().setAttribute("href", canonical);
   syncRouteJsonLd(seo?.jsonLd || []);
-}
-
-function initObfuscatedPhoneLinks(root = document) {
-  root.querySelectorAll("a[data-obf-tel]").forEach((link) => {
-    if (link.dataset.obfBound === "true") return;
-    link.dataset.obfBound = "true";
-
-    link.addEventListener("click", (event) => {
-      event.preventDefault();
-
-      const encoded = link.getAttribute("data-obf-tel") || "";
-      try {
-        const decoded = window.atob(encoded);
-        if (decoded.startsWith("tel:")) {
-          window.location.href = decoded;
-        }
-      } catch {
-        // ignore invalid payloads
-      }
-    });
-  });
 }
 
 function syncHomeHeroPriority(route) {
@@ -928,7 +908,7 @@ async function renderRouteIntoCurrent(route) {
   syncStageShell(route, payload?.shell);
   syncHeaderNavState(route);
   updateSeoForRoute(payload?.seo, route);
-  initObfuscatedPhoneLinks(app || document);
+  initObfuscatedPhoneLinks(document);
   if (route === "gallery") {
     await initializeGalleryProjectCards(app || document);
   }
@@ -1023,7 +1003,7 @@ async function slideCardNavigate(route, dir) {
     syncStageShell(route, payload?.shell);
     syncHeaderNavState(route);
     updateSeoForRoute(payload?.seo, route);
-    initObfuscatedPhoneLinks(app || document);
+    initObfuscatedPhoneLinks(document);
     if (route === "gallery") {
       await initializeGalleryProjectCards(app || document);
     }

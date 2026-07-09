@@ -1,3 +1,5 @@
+import { initObfuscatedPhoneLinks } from "./obfuscated-phone-links.js";
+
 (() => {
   const BG_VIDEO_BASELINE_SRC = "/assets/video/water720p-baseline.mp4";
   const HEADER_DEBUG_ENABLED = /(?:^|\?)headerdebug=1(?:&|$)/i.test(window.location.search);
@@ -172,26 +174,6 @@
     } catch {
       armBackgroundVideoRetry(bgVideo);
     }
-  }
-
-  function initObfuscatedPhoneLinks(root = document) {
-    root.querySelectorAll("a[data-obf-tel]").forEach((link) => {
-      if (link.dataset.obfBound === "true") return;
-      link.dataset.obfBound = "true";
-
-      link.addEventListener("click", (event) => {
-        event.preventDefault();
-        const encoded = link.getAttribute("data-obf-tel") || "";
-        try {
-          const decoded = window.atob(encoded);
-          if (decoded.startsWith("tel:")) {
-            window.location.href = decoded;
-          }
-        } catch {
-          // Ignore malformed values.
-        }
-      });
-    });
   }
 
   function initHeaderBubbles() {
