@@ -3351,10 +3351,285 @@ body.lightbox-open{
 
 
 @media (max-width: 768px){  
-
 .gallery-item__label{
-
   font-size: 1.1rem;
 
 }
+}
+
+/* ==========================================================
+   FAQ PAGE
+   ========================================================== */
+
+.faq-page {
+  padding: 3rem 0 4rem;
+}
+
+
+.faq-page .container {
+  max-width: 1100px;
+}
+
+
+/* ----------------------------------------------------------
+   Intro
+   ---------------------------------------------------------- */
+
+.faq-intro {
+  text-align: center;
+  max-width: 850px;
+  margin: 0 auto 3rem;
+}
+
+
+.faq-intro h2 {
+  margin-bottom: 1.25rem;
+}
+
+
+.faq-intro__lead {
+  font-size: 1.15rem;
+  line-height: 1.75;
+  margin: 0 auto 2rem;
+  opacity: .95;
+}
+
+
+/* Highlight callout */
+
+.faq-highlight {
+  margin: 2rem auto;
+  padding: 1.5rem 2rem;
+  max-width: 800px;
+  border-radius: 12px;
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255,255,255,.18);
+  text-align: left;
+}
+
+
+.faq-highlight strong {
+  display:block;
+  font-size:1.15rem;
+  margin-bottom:.5rem;
+}
+
+
+.faq-highlight p {
+  margin:0;
+  line-height:1.7;
+}
+
+
+
+/* ----------------------------------------------------------
+   Category Navigation
+   ---------------------------------------------------------- */
+
+.faq-categories {
+
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  gap:.75rem;
+  margin:0 auto 3.5rem;
+
+}
+
+
+.faq-categories a {
+
+  display:inline-flex;
+  align-items:center;
+  padding:.65rem 1.2rem;
+  border-radius:999px;
+  background:rgba(255,255,255,.15);
+  color:inherit;
+  text-decoration:none;
+  font-weight:600;
+  transition:
+    transform .2s ease,
+    background .2s ease;
+}
+
+
+.faq-categories a:hover {
+  transform:translateY(-2px);
+  background:rgba(255,255,255,.28);
+}
+
+
+
+/* ----------------------------------------------------------
+   FAQ Groups
+   ---------------------------------------------------------- */
+
+.faq-group {
+  margin-bottom:3.5rem;
+  padding:2rem;
+  border-radius:16px;
+  border:1px solid rgba(255,255,255,.14);
+}
+
+
+
+.faq-group h3 {
+  margin-top:0;
+  padding-bottom:.75rem;
+  margin-bottom:1.5rem;
+  border-bottom:1px solid rgba(255,255,255,.18);
+}
+
+
+
+/* ----------------------------------------------------------
+   FAQ Items
+   ---------------------------------------------------------- */
+
+.faq-item {
+  padding:1.25rem 1.5rem;
+  margin-bottom:1rem;
+  border-radius:12px;
+  background:rgba(255,255,255,.08);
+  border:1px solid rgba(255,255,255,.12);
+
+}
+
+.faq-item:last-child {
+  margin-bottom:0;
+}
+
+
+
+.faq-item h4 {
+  margin:0 0 .75rem;
+  font-size:1.15rem;
+  line-height:1.4;
+}
+
+
+
+.faq-item p {
+  margin:0;
+  line-height:1.75;
+}
+
+
+
+.faq-item p + p {
+  margin-top:1rem;
+}
+
+
+
+/* ----------------------------------------------------------
+   Process Steps
+   ---------------------------------------------------------- */
+
+.faq-steps {
+  margin:1rem 0 0;
+  padding-left:1.5rem;
+}
+
+
+
+.faq-steps li {
+  margin-bottom:.75rem;
+  line-height:1.6;
+}
+
+
+
+.faq-steps li:last-child {
+  margin-bottom:0;
+}
+
+
+
+/* ----------------------------------------------------------
+   CTA
+   ---------------------------------------------------------- */
+
+.faq-cta {
+  text-align:center;
+  margin-top:4rem;
+  padding:2.5rem;
+  border-radius:16px;
+  background:rgba(255,255,255,.12);
+  border:1px solid rgba(255,255,255,.18);
+}
+
+
+
+.faq-cta h3 {
+  margin-top:0;
+}
+
+
+
+.faq-cta p {
+  max-width:650px;
+  margin:0 auto 1.5rem;
+  line-height:1.7;
+}
+
+
+
+/* Button */
+
+.faq-cta .button {
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  padding:.85rem 1.8rem;
+  border-radius:999px;
+  background:#fff;
+  color:#222;
+  font-weight:700;
+  text-decoration:none;
+  transition:
+    transform .2s ease,
+    opacity .2s ease;
+}
+
+
+.faq-cta .button:hover {
+  transform:translateY(-2px);
+  opacity:.9;
+}
+
+
+
+/* ----------------------------------------------------------
+   Responsive
+   ---------------------------------------------------------- */
+
+@media (max-width:768px) {
+  .faq-page {
+    padding:2rem 0 3rem;
+  }
+
+  .faq-group {
+    padding:1.25rem;
+  }
+
+
+  .faq-item {
+    padding:1rem;
+  }
+
+
+  .faq-categories {
+    justify-content:flex-start;
+  }
+
+  .faq-categories a {
+    width:100%;
+    justify-content:center;
+  }
+
+
+  .faq-highlight {
+    padding:1.25rem;
+  }
 }
