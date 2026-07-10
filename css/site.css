@@ -122,67 +122,9 @@ html.bg-ready .stage__card {
   clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
 }
 
-.transition-overlay .wash-video {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center bottom;
-  opacity: 0.9;
-  filter: saturate(1.1) contrast(1.1) brightness(1.05);
-}
 
-.transition-overlay.active {
-  animation: wash-horizontal-forward 2200ms var(--stage-ease) forwards;
-}
 
-.transition-overlay.active.dir-backward {
-  animation: wash-horizontal-backward 2200ms var(--stage-ease) forwards;
-}
 
-@media (max-width: 767px) {
-  .transition-overlay.active,
-  .transition-overlay.active.dir-backward {
-    animation-duration: 1800ms;
-  }
-}
-
-@keyframes wash-horizontal-forward {
-  0% {
-    clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
-  }
-  30% {
-    clip-path: polygon(0 0, 90% 0, 90% 100%, 0 100%);
-  }
-  45% {
-    clip-path: polygon(0 0, 86% 0, 86% 100%, 0 100%);
-  }
-  60% {
-    clip-path: polygon(0 0, 90% 0, 90% 100%, 0 100%);
-  }
-  100% {
-    clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
-  }
-}
-
-@keyframes wash-horizontal-backward {
-  0% {
-    clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%);
-  }
-  30% {
-    clip-path: polygon(10% 0, 100% 0, 100% 100%, 10% 100%);
-  }
-  45% {
-    clip-path: polygon(14% 0, 100% 0, 100% 100%, 14% 100%);
-  }
-  60% {
-    clip-path: polygon(10% 0, 100% 0, 100% 100%, 10% 100%);
-  }
-  100% {
-    clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%);
-  }
-}
 
 /* Prefers reduced motion */
 @media (prefers-reduced-motion: reduce) {
