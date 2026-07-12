@@ -48,23 +48,133 @@
         "@context": "https://schema.org",
         "@graph": [
           {
-            "@type": "WebPage",
-            "name": "Custom Pool Construction Process",
-            "url": "https://www.hoganpools.com/our-process/",
-            "description": "See how Hogan Pools designs and builds custom gunite pools for St. Louis and Ballwin homeowners.",
-            "isPartOf": {
-              "@type": "WebSite",
-              "name": "Hogan Pools",
-              "url": "https://www.hoganpools.com/"
-            }
+            "@type": "FAQPage",
+            "@id": "https://www.hoganpools.com/faq/#faq",
+            "url": "https://www.hoganpools.com/faq/",
+            "name": "Frequently Asked Questions about Gunite Pools",
+            "description": "Answers to common questions about custom gunite pool construction, design, pricing, timelines, equipment, maintenance, and ownership from Hogan Pools.",
+            "about": {
+              "@type": "Service",
+              "name": "Custom Gunite Pool Construction",
+              "provider": {
+                "@type": "Organization",
+                "name": "Hogan Pools"
+              },
+              "areaServed": {
+                "@type": "Place",
+                "name": "St. Louis, Missouri"
+              }
+            },
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "How do I start the process of building a pool?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "The first step is a conversation about your backyard, your goals, and what you want your pool to become. We will learn about your property, discuss ideas, and help determine the right direction for your project."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "What happens during the first consultation?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "We visit with you to understand how you want to use your outdoor space, discuss design options, review your property, and answer your questions. This helps us create a pool plan that fits your home and lifestyle."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Do I need to know exactly what kind of pool I want?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "No. Many homeowners start with only an idea. We help guide you through designs, features, materials, and options to create a pool that fits your vision."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "How much does a custom pool cost?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Because every Hogan Pools project is custom, the cost depends on your backyard, design, features, and the options you choose. Most custom pool projects typically fall within a range of about $135,000 to $165,000, but the final investment can vary depending on the details of your project. Unlike a standard pool package, a custom gunite pool is designed around your property and your vision. Factors like terrain, size, finishes, water features, lighting, spas, and other additions can all affect the final cost. During your consultation, we will help you understand what options make sense for your backyard and budget."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Do you offer financing options?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Yes. We can help you explore financing options that make building your backyard project more manageable."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "How long does it take to build a pool?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Construction time depends on the design, features, weather, permitting, and other project details. During the planning process, we provide a clearer timeline based on your specific project."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "What happens after construction begins?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "We guide you through each stage of construction and keep you informed as your project moves from preparation to completion."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Can I customize my pool design?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Yes. Custom gunite pools allow you to choose shapes, finishes, water features, lighting, tanning ledges, spas, and other features that make the pool your own."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Why choose a gunite pool?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Gunite pools offer exceptional durability and design flexibility, allowing us to create unique pools built specifically for your backyard."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Can you build a pool for a smaller backyard?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Yes. A well-designed pool can make great use of many different backyard sizes. The design is tailored to your space."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "How much maintenance does a pool require?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Maintenance depends on your pool equipment, features, and how often it is used. We can help you understand what care your specific pool will need."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Do you provide support after installation?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Yes. We want your pool to continue performing beautifully after completion and are available to help with questions after installation."
+                }
+              }
+            ]
           },
           {
-            "@type": "Organization",
+            "@type": "HomeAndConstructionBusiness",
             "name": "Hogan Pools",
             "url": "https://www.hoganpools.com/",
             "logo": "https://www.hoganpools.com/assets/img-webp/logo.webp",
             "telephone": "+1-636-744-3242",
             "email": "anthony@hoganpools.com",
+            "areaServed": {
+              "@type": "Place",
+              "name": "St. Louis, Missouri"
+            },
             "address": {
               "@type": "PostalAddress",
               "streetAddress": "325 Brightfield Drive",
@@ -91,10 +201,19 @@
               {
                 "@type": "ListItem",
                 "position": 2,
-                "name": "Our Process",
-                "item": "https://www.hoganpools.com/our-process/"
+                "name": "FAQ",
+                "item": "https://www.hoganpools.com/faq/"
               }
             ]
+          },
+          {
+            "@type": "Person",
+            "name": "Anthony George",
+            "jobTitle": "Founder and Owner",
+            "worksFor": {
+              "@type": "Organization",
+              "name": "Hogan Pools"
+            }
           }
         ]
       }
@@ -238,172 +357,162 @@
           <div class="stage__content">
             <section class="page-hero">
               <div class="container">
-                <h1>Frequently Asked Questions</h1>
+                <h1>Frequently Asked Questions about Custom Gunite Pools</h1>
                 <div class="page-hero__divider" aria-hidden="true"></div>
               </div>
             </section>
 
-<section class="faq-group" id="getting-started">
-  <h3>Getting Started</h3>
+            <section class="faq-group" id="getting-started">
+              <h3>Getting Started</h3>
 
-  <article class="faq-item">
-    <h4>How do I start the process of building a pool?</h4>
-    <p>
-      The first step is a conversation about your backyard, your goals, and what you
-      want your pool to become. We will learn about your property, discuss ideas,
-      and help determine the right direction for your project.
-    </p>
-  </article>
+              <article class="faq-item">
+                <h4>How do I start the process of building a pool?</h4>
+                <p>
+                  The first step is a conversation about your backyard, your goals, and what you
+                  want your pool to become. We will learn about your property, discuss ideas, and
+                  help determine the right direction for your project.
+                </p>
+              </article>
 
-  <article class="faq-item">
-    <h4>What happens during the first consultation?</h4>
-    <p>
-      We visit with you to understand how you want to use your outdoor space,
-      discuss design options, review your property, and answer your questions.
-      This helps us create a pool plan that fits your home and lifestyle.
-    </p>
-  </article>
+              <article class="faq-item">
+                <h4>What happens during the first consultation?</h4>
+                <p>
+                  We visit with you to understand how you want to use your outdoor space, discuss
+                  design options, review your property, and answer your questions. This helps us
+                  create a pool plan that fits your home and lifestyle.
+                </p>
+              </article>
 
-  <article class="faq-item">
-    <h4>Do I need to know exactly what kind of pool I want?</h4>
-    <p>
-      No. Many homeowners start with only an idea. We help guide you through
-      designs, features, materials, and options to create a pool that fits your
-      vision.
-    </p>
-  </article>
-</section>
-
-
-<section class="faq-group" id="cost">
-  <h3>Cost & Budget</h3>
-
-<article class="faq-item">
-  <h4>How much does a custom pool cost?</h4>
-  <p>
-    Because every Hogan Pools project is custom, the cost depends on your backyard,
-    design, features, and the options you choose. Most custom pool projects
-    typically fall within a range of about $135,000 to $165,000, but the final
-    investment can vary depending on the details of your project.
-  </p>
-  <p>
-    Unlike a standard pool package, a custom gunite pool is designed around your
-    property and your vision. Factors like terrain, size, finishes, water features,
-    lighting, spas, and other additions can all affect the final cost. During your
-    consultation, we will help you understand what options make sense for your
-    backyard and budget.
-  </p>
-</article>
-
-  <article class="faq-item">
-    <h4>Do you offer financing options?</h4>
-    <p>
-      Yes. We can help you explore financing options that make building your
-      backyard project more manageable.
-    </p>
-  </article>
-</section>
-
-
-<section class="faq-group" id="timeline">
-  <h3>Construction Process</h3>
-
-  <article class="faq-item">
-    <h4>How long does it take to build a pool?</h4>
-    <p>
-      Construction time depends on the design, features, weather, permitting,
-      and other project details. During the planning process, we provide a clearer
-      timeline based on your specific project.
-    </p>
-  </article>
-
-  <article class="faq-item">
-    <h4>What happens after construction begins?</h4>
-    <p>
-      We guide you through each stage of construction and keep you informed as
-      your project moves from preparation to completion.
-    </p>
-  </article>
-</section>
-
-
-<section class="faq-group" id="design">
-  <h3>Pool Design</h3>
-
-  <article class="faq-item">
-    <h4>Can I customize my pool design?</h4>
-    <p>
-      Yes. Custom gunite pools allow you to choose shapes, finishes, water
-      features, lighting, tanning ledges, spas, and other features that make the
-      pool your own.
-    </p>
-  </article>
-
-  <article class="faq-item">
-    <h4>Why choose a gunite pool?</h4>
-    <p>
-      Gunite pools offer exceptional durability and design flexibility, allowing
-      us to create unique pools built specifically for your backyard.
-    </p>
-  </article>
-
-  <article class="faq-item">
-    <h4>Can you build a pool for a smaller backyard?</h4>
-    <p>
-      Yes. A well-designed pool can make great use of many different backyard
-      sizes. The design is tailored to your space.
-    </p>
-  </article>
-</section>
-
-
-<section class="faq-group" id="ownership">
-  <h3>After Your Pool Is Complete</h3>
-
-  <article class="faq-item">
-    <h4>How much maintenance does a pool require?</h4>
-    <p>
-      Maintenance depends on your pool equipment, features, and how often it is
-      used. We can help you understand what care your specific pool will need.
-    </p>
-  </article>
-
-  <article class="faq-item">
-    <h4>Do you provide support after installation?</h4>
-    <p>
-      Yes. We want your pool to continue performing beautifully after completion
-      and are available to help with questions after installation.
-    </p>
-  </article>
-</section>
-
-
-<section class="faq-cta">
-  <h3>Still have questions about building your pool?</h3>
-  <p>
-    Every backyard is different. Contact Hogan Pools and we can help you explore
-    what is possible for your home.
-  </p>
-  <a class="button" href="/contact/">Start Your Pool Consultation</a>
-</section>
-
-           
-
-              <footer class="site-footer">
-                <div class="footer__content">
-                  <div class="footer__copyright">© 2026 Hogan Pools</div>
-                  <div class="footer__contact">
-                    <span class="footer__label">Ask us anything - we're here to help.</span>
-
-                    <a class="footer__link" href="tel:+16367443242">☎ Call us: (636) 744-3242</a>
-
-                    <a class="footer__link" href="mailto:anthony@hoganpools.com"
-                      >✉ Send us an email</a
-                    >
-                  </div>
-                </div>
-              </footer>
+              <article class="faq-item">
+                <h4>Do I need to know exactly what kind of pool I want?</h4>
+                <p>
+                  No. Many homeowners start with only an idea. We help guide you through designs,
+                  features, materials, and options to create a pool that fits your vision.
+                </p>
+              </article>
             </section>
+
+            <section class="faq-group" id="cost">
+              <h3>Cost & Budget</h3>
+
+              <article class="faq-item">
+                <h4>How much does a custom pool cost?</h4>
+                <p>
+                  Because every Hogan Pools project is custom, the cost depends on your backyard,
+                  design, features, and the options you choose. Most custom pool projects typically
+                  fall within a range of about $135,000 to $165,000, but the final investment can
+                  vary depending on the details of your project.
+                </p>
+                <p>
+                  Unlike a standard pool package, a custom gunite pool is designed around your
+                  property and your vision. Factors like terrain, size, finishes, water features,
+                  lighting, spas, and other additions can all affect the final cost. During your
+                  consultation, we will help you understand what options make sense for your
+                  backyard and budget.
+                </p>
+              </article>
+
+              <article class="faq-item">
+                <h4>Do you offer financing options?</h4>
+                <p>
+                  Yes. We can help you explore financing options that make building your backyard
+                  project more manageable.
+                </p>
+              </article>
+            </section>
+
+            <section class="faq-group" id="timeline">
+              <h3>Construction Process</h3>
+
+              <article class="faq-item">
+                <h4>How long does it take to build a pool?</h4>
+                <p>
+                  Construction time depends on the design, features, weather, permitting, and other
+                  project details. During the planning process, we provide a clearer timeline based
+                  on your specific project.
+                </p>
+              </article>
+
+              <article class="faq-item">
+                <h4>What happens after construction begins?</h4>
+                <p>
+                  We guide you through each stage of construction and keep you informed as your
+                  project moves from preparation to completion.
+                </p>
+              </article>
+            </section>
+
+            <section class="faq-group" id="design">
+              <h3>Pool Design</h3>
+
+              <article class="faq-item">
+                <h4>Can I customize my pool design?</h4>
+                <p>
+                  Yes. Custom gunite pools allow you to choose shapes, finishes, water features,
+                  lighting, tanning ledges, spas, and other features that make the pool your own.
+                </p>
+              </article>
+
+              <article class="faq-item">
+                <h4>Why choose a gunite pool?</h4>
+                <p>
+                  Gunite pools offer exceptional durability and design flexibility, allowing us to
+                  create unique pools built specifically for your backyard.
+                </p>
+              </article>
+
+              <article class="faq-item">
+                <h4>Can you build a pool for a smaller backyard?</h4>
+                <p>
+                  Yes. A well-designed pool can make great use of many different backyard sizes. The
+                  design is tailored to your space.
+                </p>
+              </article>
+            </section>
+
+            <section class="faq-group" id="ownership">
+              <h3>After Your Pool Is Complete</h3>
+
+              <article class="faq-item">
+                <h4>How much maintenance does a pool require?</h4>
+                <p>
+                  Maintenance depends on your pool equipment, features, and how often it is used. We
+                  can help you understand what care your specific pool will need.
+                </p>
+              </article>
+
+              <article class="faq-item">
+                <h4>Do you provide support after installation?</h4>
+                <p>
+                  Yes. We want your pool to continue performing beautifully after completion and are
+                  available to help with questions after installation.
+                </p>
+              </article>
+            </section>
+
+            <section class="faq-cta">
+              <h3>Still have questions about building your pool?</h3>
+              <p>
+                Every backyard is different. Contact Hogan Pools and we can help you explore what is
+                possible for your home.
+              </p>
+              <a class="button" href="/contact/">📞 Contact Us</a>
+            </section>
+
+            <footer class="site-footer">
+              <div class="footer__content">
+                <div class="footer__copyright">© 2026 Hogan Pools</div>
+                <div class="footer__contact">
+                  <span class="footer__label">Ask us anything - we're here to help.</span>
+
+                  <a class="footer__link" href="tel:+16367443242">☎ Call us: (636) 744-3242</a>
+
+                  <a class="footer__link" href="mailto:anthony@hoganpools.com"
+                    >✉ Send us an email</a
+                  >
+                </div>
+              </div>
+            </footer>
           </div>
         </div>
       </div>
