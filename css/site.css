@@ -2308,6 +2308,18 @@ body.is-gunite .stage__content {
   margin-top: 5px;
 }
 
+.about-emblems__img--yt {
+  width: 75px;
+  height: 75px;
+  margin-top: 5px;
+}
+
+.about-emblems__img--google {
+  width: 66px;
+  height: 66px;
+  margin-top: 5px;
+}
+
 .about-emblems__img--npc {
   margin-top: 13px;
   width: 168px;
