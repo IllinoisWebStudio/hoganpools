@@ -1047,7 +1047,9 @@ async function navigate(route) {
 function onNavClick(e) {
   const a = e.target.closest("a");
   if (!a) return;
-
+if (a.pathname.startsWith("/privacy-policy/")) {
+  return;
+}
   if (a.hasAttribute("download")) return;
   if (a.target && a.target.toLowerCase() === "_blank") return;
   if (e.metaKey || e.ctrlKey || e.shiftKey || e.altKey || e.button !== 0) return;
@@ -1081,38 +1083,87 @@ function onStageControl(direction) {
 }
 
 async function boot() {
+  const path = window.location.pathname.replace(/\/+$/, "");
+  const isStandalonePage = path === "/privacy-policy";
+
   initBackgroundVideoGate();
 
   await injectPartials();
   initObfuscatedPhoneLinks(document);
 
   syncHeaderHeight();
+
   window.addEventListener("resize", () => {
     syncHeaderHeight();
     updateHomeFitScale();
     initHomeTestimonialsMobileRotator();
   });
+
   if (window.ResizeObserver && siteHeader) {
     const headerResizeObserver = new ResizeObserver(() => {
       syncHeaderHeight();
       updateHomeFitScale();
     });
+
     headerResizeObserver.observe(siteHeader);
   }
+
   window.addEventListener("DOMContentLoaded", updateHomeFitScale);
 
   setIntroState();
 
   const wakeVideo = () => startBackgroundVideo();
+
   ["pointerdown", "touchstart", "keydown", "scroll"].forEach((eventName) => {
-    window.addEventListener(eventName, wakeVideo, { once: true, passive: true });
+    window.addEventListener(eventName, wakeVideo, {
+      once: true,
+      passive: true,
+    });
   });
+
+  /*
+    Standalone pages:
+    - Keep the shared header/background behavior
+    - Do not allow SPA routing to replace the page content
+    - Do not call loadRoute()
+  */
+  if (isStandalonePage) {
+    document.body.classList.remove("is-home");
+
+    if (stage) {
+      stage.classList.add("stage--static");
+      stage.classList.add("is-ready");
+      stage.classList.add("is-controls");
+      stage.classList.remove(
+        "is-intro",
+        "is-sliding",
+        "stage-prep",
+        "slide-out-left",
+        "slide-out-right",
+        "slide-in-from-left",
+        "slide-in-from-right"
+      );
+    }
+
+    syncHeaderHeight();
+    applyTestimonialSizing(document);
+    updateHomeFitScale();
+
+    startBackgroundVideoAfterInitialPaint();
+
+    return;
+  }
+
+  /*
+    SPA navigation only
+  */
 
   document.addEventListener("click", onNavClick);
 
   if (prevButton) {
     prevButton.addEventListener("click", () => onStageControl(-1));
   }
+
   if (nextButton) {
     nextButton.addEventListener("click", () => onStageControl(1));
   }
@@ -1122,18 +1173,24 @@ async function boot() {
     if (e.key === "ArrowRight") onStageControl(1);
   });
 
-  // initial load
+  // Initial route load
   const initialRoute = getRouteFromLocation();
+
   await renderRouteIntoCurrent(initialRoute);
 
   const expectedPath = routeToPath(currentRoute);
+
   if (location.pathname !== expectedPath || location.hash) {
-    history.replaceState({ route: currentRoute }, "", expectedPath);
+    history.replaceState(
+      { route: currentRoute },
+      "",
+      expectedPath
+    );
   }
 
   startBackgroundVideoAfterInitialPaint();
 
-  // browser history navigation (back/forward)
+  // Browser history navigation
   window.addEventListener("popstate", async () => {
     const nextRoute = getRouteFromLocation();
     await navigate(nextRoute);
